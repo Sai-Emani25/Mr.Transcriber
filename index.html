@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Transcriber | Fast YouTube Transcript Extractor</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Extract YouTube transcripts instantly with Mr. Transcriber. A premium, fast, and free tool to convert video speech to text.">
+    <meta name="keywords" content="youtube transcript, video to text, subtitle extractor, youtube captions">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Mr. <span>Transcriber</span></h1>
+            <p class="subtitle">Premium YouTube Transcript Extraction Tool</p>
+        </header>
+
+        <main>
+            <div class="input-group">
+                <input type="text" id="youtubeUrl" placeholder="Paste YouTube Video URL here..."
+                    aria-label="YouTube URL">
+                <button id="extractBtn" onclick="handleExtraction()">Extract Now</button>
+            </div>
+
+            <div id="status" aria-live="polite">Ready to extract</div>
+
+            <!-- Local File Protocol Warning -->
+            <div class="protocol-warning" id="protocolWarning">
+                <strong>Important:</strong> You are opening this via <code>file://</code>.
+                Web browsers restrict cross-origin requests for security. If extraction fails,
+                please host these files on a server or use a local server (e.g., Live Server extension or
+                <code>npx serve</code>).
+            </div>
+
+            <!-- Result Box -->
+            <section id="transcriptBox" class="transcript-box">
+                <div class="transcript-header">
+                    <h3>Video Transcript</h3>
+                    <button class="copy-btn" id="copyBtn" onclick="copyToClipboard()" title="Copy to clipboard">Copy
+                        Text</button>
+                </div>
+                <div id="transcriptContent" class="transcript-content" tabindex="0"></div>
+            </section>
+        </main>
+
+        <footer>
+            <!-- Footer content could go here -->
+        </footer>
+    </div>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
